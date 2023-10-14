@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Title</title>
+    <link rel="stylesheet" href="examp.css">
+    <base target="_blank">
+</head>
+<body>
+	<script src="jq.min.js"></script>
+    <!-- <audio src="music.m4a" id="audio" preload="none"></audio> -->
+    <audio src="https://ghproxy.com/https://github.com/WaterDropLab/tczxydh/releases/download/Music/music.m4a" id="audio" preload="none"></audio>
+    <div id="tit">
+        <p class="title">安徽省天长中学运动会</p>
+        <!-- <p>若某些图片加载失败，请右键图片点击加载映像以重新加载</p> -->
+        <div id="musctrl">
+            <p>音乐: 运动员进行曲</p>
+            <a onclick="if($(this).hasClass('play')){
+                    document.getElementById('audio').play();
+                    played=true;
+                    $('#musctrl>.btn').text('暂停');
+                    $('#musctrl>.btn').removeClass('play');
+                    $('#music>.tip').text('我们已开始播放音乐');
+                    $('#music>.btn').remove();
+                }else{
+                    document.getElementById('audio').pause();
+                    this.innerText='播放';
+                    $(this).addClass('play')
+                }" class="play a btn" style="margin: 0 15px;">播放</a>
+        </div>
+    </div>
+    <a class="a" id="totop" onclick="$('html')[0].scroll(0,0)">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-bar-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M3.646 11.854a.5.5 0 0 0 .708 0L8 8.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zM2.4 5.2c0 .22.18.4.4.4h10.4a.4.4 0 0 0 0-.8H2.8a.4.4 0 0 0-.4.4z"/>
+        </svg>
+    </a>=
+    <div id="cover">
+        <p>加载中...</p>
+    </div>
+    <script>
+        var r = window.location.search.substr(1).match(/(^|&)id=([^&]*)(&|$)/);
+        if (r != null) r=unescape(r[2])
+        else{
+            alert('一些小问题，不必介意，还请刷新试试');
+        }
+        $.getJSON(`pics/${r}.json`).then(res=>{
+            $('#title').text(res.title);
+            res.pics.forEach(p => {
+                $('#content')[0].innerHTML+=`<div class="pic af">
+                    <p>加载中...</p>
+                    <img src="${p.url}" class="pic" loading="lazy">
+                    <p class="desp">${p.dtl}</p>
+                </div>`; 
+            });
+            $('#cover,html').addClass('load');
+            start();
+        }).fail(()=>{
+            alert('一些小问题，不必介意，还请刷新试试');
+        });
+    </script>
+    <div id="content">
+        <div id="music">
+            <p class="ti">音乐起~</p>
+            <p class="tip">下滑即意味着我们会趁浏览器不注意时播放</p>
+            <a onclick="document.getElementById('audio').play();
+            played=true;
+            $('#musctrl>.btn').text('暂停');
+            $('#musctrl>.btn').removeClass('play');
+            $('#music>.tip').text('我们已开始播放音乐');
+            $('#music>.btn.noplay').remove();
+            $(this).remove();" class="play a btn">播放</a>
+            <a class="a btn noplay" onclick="playm=false;$('#musctrl').remove();$('#music>.btn').remove();$('#music>.tip').text('我们不会播放音乐')">不播放音乐</a>
+        </div>
+    </div>
+    <div id="footer">
+        网站制作：<a class="a jump">星源</a><br>
+        策划方：<a class="a jump">水滴实验室</a>
+    </div>
+    <script src="examp.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+@import url('base.css');
+
+html{
+    scroll-behavior: smooth;
+}
+
+#cover{
+    position: fixed;
+    background:#eee;
+    background-image: 
+        radial-gradient(circle at 30% 30%,#ff000020 0 0,#00000000 50%),
+        radial-gradient(circle at 60% 70%,#2983cc25 0 0,#00000000 50%);
+    height: 100%;
+    width: 100%;
+    z-index: 6;
+    top: 0;
+    left: 0;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    text-shadow: 0 1px 3px #eee;
+}
+#cover.load{
+    display: none;
+}
+html.load{
+    overflow: unset;
+}
+html{
+    overflow: hidden;
+}
+
+#tit{
+    width: calc(100% + 40px);
+    background-color: #ececec90;
+    position: fixed;
+    height: 90px;
+    backdrop-filter: blur(20px) saturate(1.3);
+    display: block;
+    margin-top: -20px;
+    margin-left: -20px;
+    padding: 30px 20px 0 40px;
+    border-bottom: 2px solid #7f7f7f30;
+    box-shadow: 0 3px 18px #00000020;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+}
+
+#tit>.title{
+    font-size: 28px;
+    margin: 0;
+    padding-top: 5px;
+}
+
+:root.mobile #tit>.title{
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+#musctrl{
+    display: flex;
+    align-items: center;
+}
+
+#musctrl>.btn{
+    background-color: #fcfcfcbc;
+}
+
+#footer{
+    position: relative;
+    bottom: 0;
+    width: calc(100% - 50px);
+    background-color: #222;
+    color: #eee;
+    padding: 25px 30px 20px 20px;
+    margin: 10px 25px;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px var(--sd);
+}
+
+#content{
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px;
+    padding-bottom: 50px;
+}
+
+#music{
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px #00000050;
+    background-color: #efefef;
+    padding: 40px 10px;
+    width: 50%;
+    max-width: 600px;
+    min-width: 450px;
+    margin-bottom: calc(var(--ph) / 2);
+}
+
+:root.mobile #music{
+    width: calc(100% - 30px);
+    min-width: 200px;
+}
+
+#music>.ti{
+    font-size: 100px;
+    margin: 0;
+}
+
+:root.mobile #music>.ti{
+    font-size: 50px;
+}
+
+#content>.text,
+#content>.trad{
+    max-width: 800px;
+    margin: 0 0 calc(var(--ph) / 2) 0;
+    transition: 200ms;
+    background-color: #7f7f7f10;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+:root.mobile #content>.text,
+:root.mobile #content>.trad{
+    border-radius: 0 !important;
+}
+
+#content>.text>.tit{
+    font-size: 40px;
+    margin: 0;
+}
+
+#content>.text>.tit::before{
+    content: '\2009';
+    display: inline-block;
+    white-space: pre;
+    border-radius: 10px;
+    margin-right: 9px;
+    background-color: #2983cc9f;
+}
+
+#content>.text>.dtl{
+    margin: 0 0 0 25px;
+}
+
+#content>.trad{
+    white-space-collapse: preserve;
+    word-break: keep-all;
+    line-height: 30px;
+    font-size: 19px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    background: 
+    
+    radial-gradient(circle at 10% 10%,#fe47221c 0 10%,#c5964610 40%),
+    linear-gradient(175deg,#5cf9d710 0 60%,#10953210 70%);
+    /* font-family: 'Courier New', Courier, monospace; */
+    padding: 0 25px;
+}
+
+#content>.pic{
+    width: calc(100% - 50px);
+    max-width: 1100px;
+    margin: 0;
+    transition: 200ms;
+    margin-bottom: calc(var(--ph) / 2);
+}
+
+#content>.pic.bf{
+    transform: translateY(-100%);
+}
+
+#content>.pic.af{
+    transform: translateY(100%);
+}
+
+#content>.pic>.pic{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px var(--sd);
+    position: relative;
+    top: -40px;
+}
+
+#content>.pic>p{
+    width: 100%;
+    border-radius: 10px;
+    /* position: relative; */
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    margin:0;
+    /* top: 40px; */
+    z-index: -1;
+}
+
+#content>.pic>.desp{
+    font-size: 20px;
+    margin: 0;
+    position: relative;
+    top: -100px;
+    z-index: 1;
+    color: #fff;
+    text-shadow: #000 0 1px 7px;
+}
+
+#totop{
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    background-color: #f5f5f5;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 2px 10px #00000040;
+    border-radius: 50%;
+    /* text-align: center; */
+    padding: 14px;
+    transition: 100ms;
+    background-clip: padding-box;
+    z-index: 5;
+}
+
+#totop:hover{
+    background-color: #e0e0e0;
+}
+
+#totop:active{
+    background-color: #d2d2d2;
+    transform: scale(0.95);
+}
