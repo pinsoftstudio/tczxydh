@@ -85,7 +85,7 @@ body {
     border-radius: 10px;
     /* box-shadow: 0 2px 20px #00000050; */
     /* background-color: #efefef; */
-    background-image: radial-gradient(circle at 50% 120%, #ffb3b3 0 10%, #fffbf2c0 60%);
+    background-image: radial-gradient(circle at 50% 120%, #ffaeae 0 10%, #f5f0e7c0 60%);
     backdrop-filter: blur(5px) saturate(0.8);
     padding: 40px 0;
     width: 100%;
@@ -94,6 +94,7 @@ body {
     margin-bottom: calc(var(--ph) / 2);
     font-size: 30px;
     overflow: hidden;
+    box-shadow: 0 1px 70px #a0480050;
 }
 
 #tit>.cnt>img {
@@ -162,7 +163,6 @@ body {
     grid-template-columns: repeat(auto-fill, 200px);
     gap: 12px;
     padding: 10px 60px;
-    margin-bottom: 100px;
     justify-content: center;
     grid-auto-flow: row dense;
 }
@@ -204,6 +204,26 @@ body {
     opacity: 0.7;
 }
 
+#download{
+    display: flex;
+    margin-bottom: 100px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+#download>.btn{
+    background-color: #0067c0;
+    box-shadow: 0 -0.5px 1px #1473c5,0 1px 2px #003e73;
+    color:#fff;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+#download>.btn:active{
+    opacity: 0.7;
+}
+
 #totop {
     position: fixed;
     right: 20px;
@@ -234,10 +254,10 @@ body {
     position: relative;
     bottom: 0;
     width: calc(100% - 50px);
-    background-color: #222;
+    background-color: #333;
     color: #eee;
-    padding: 25px 30px 20px 20px;
+    padding: 25px 30px 20px 30px;
     margin: 10px 25px;
     border-radius: 10px;
-    box-shadow: 0 1px 6px var(--sd);
+    box-shadow: 0 1px 16px #00000050;
 }

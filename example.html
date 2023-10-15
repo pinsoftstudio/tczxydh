@@ -7,6 +7,7 @@
     <title id="title">Title</title>
     <link rel="stylesheet" href="examp.css">
     <base target="_self">
+    <link rel="shortcut icon" href="https://picst.sunbangyan.cn/2023/10/14/rb0n6s.png" type="image/png">
 </head>
 
 <body>
@@ -51,7 +52,7 @@
             <a class="card enable" href="example.html?id=volunteer">
                 <p>志愿服务</p>
             </a>
-            <a class="card" style="grid-column: 2 span;">
+            <a class="card enable" style="grid-column: 2 span;" href="example.html?id=closecrmn">
                 <p>闭幕式</p>
             </a>
             <a class="card">
@@ -128,17 +129,21 @@
     </script>
     <div id="content">
         <div id="music">
-            <p class="ti">音乐起~</p>
-            <p class="tip">下滑即意味着我们会趁浏览器不注意时播放</p>
+            <p class="ti">奏乐~</p>
+            <p class="tip">下滑即意味着我们将趁浏览器不备时播放</p>
             <a onclick="document.getElementById('audio').play();
             played=true;
             $('#musctrl>.btn').text('暂停');
             $('#musctrl>.btn').removeClass('play');
             $('#music>.tip').text('我们已开始播放音乐');
-            $('#music>.btn.noplay').remove();
-            $(this).remove();" class="play a btn">播放</a>
-            <a class="a btn noplay"
-                onclick="playm=false;$('#musctrl').remove();$('#music>.btn').remove();$('#music>.tip').text('我们不会播放音乐')">不播放音乐</a>
+            $('#music>.btn').remove();
+            localStorage.setItem('playm','true');" class="play a btn">默认播放</a>
+            <a class="a btn noplay" onclick="
+            document.getElementById('audio').pause();
+            playm=false;
+            $('#music>.btn').remove();
+            $('#music>.tip').text('我们不会播放音乐');
+            localStorage.setItem('playm','false');">从不播放</a>
         </div>
     </div>
     <div id="footer">

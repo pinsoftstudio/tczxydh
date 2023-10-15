@@ -5,6 +5,17 @@ try{
     pld=true;
 }
 let ph,played=false,playm=pld;
+if(localStorage.getItem('playm')=='true'){
+    playm=true;
+    $('#music>.btn.play').remove();
+    $('#music>.tip').text('我们时刻准备趁浏览器不备播放音乐');
+}else if(localStorage.getItem('playm')=='false'){
+    document.getElementById('audio').pause();
+    playm=false;
+    $('#music>.btn.noplay').remove();
+    $('#music>.tip').text('我们不会播放音乐');
+    localStorage.setItem('playm',false);
+}
 function init() {
     ph=window.innerHeight;
     $(':root').css('--ph',`${ph}px`);
@@ -18,14 +29,14 @@ function start() {
     let pics=document.querySelectorAll('#content>.pic');
     document.addEventListener('scroll',()=>{
         if(playm && (!played)){
-            document.getElementById('audio').play();
             if(document.getElementById('audio').played.length>0){
                 played=true;
+                $('#music>.btn').remove();
                 $('#musctrl>.btn').text('暂停');
                 $('#musctrl>.btn').removeClass('play');
                 $('#music>.tip').text('我们已开始播放音乐');
-                $('#music>.btn').remove();
-            }
+            }else
+            document.getElementById('audio').play();
         }
         let t=$('html').scrollTop();
         pics.forEach(pic => {

@@ -120,7 +120,7 @@ body{
     text-align: center;
     transition: 200ms cubic-bezier(1, 0, 0, 1);
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     scroll-behavior: smooth;
 }
 
@@ -135,6 +135,7 @@ body{
     gap: 12px;
     justify-content: center;
     grid-auto-flow: row dense;
+    overflow: hidden;
 }
 
 
@@ -223,11 +224,11 @@ body{
 
 :root.mobile #music{
     width: calc(100% - 30px);
-    min-width: 200px;
+    min-width: 170px;
 }
 
 #music>.ti{
-    font-size: 100px;
+    font-size: 80px;
     margin: 0;
 }
 
