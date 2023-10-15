@@ -1,6 +1,22 @@
 {
     "title": "志愿服务",
+    "intro":{
+        "tit":"志愿服务",
+        "cnt":"志愿服务是田径运动会中不可或缺的服务项目，包括检录服务、鼓励语播报、奖状提醒领取、失物招领播报等。在运动会期间，有大量的观众需要参与和观看，志愿者们要为他们提供热情周到的服务，让运动会更加顺利和成功。他们的工作不仅是体力活，也需要充分的沟通和协调能力，为观众们留下一个美好而难忘的印象。"
+    },
     "pics": [
+        {
+            "url": "https://picss.sunbangyan.cn/2023/10/12/10rowfi.jpg",
+            "dtl": ""
+        },
+        {
+            "url": "https://picdl.sunbangyan.cn/2023/10/12/10rozls.jpg",
+            "dtl": ""
+        },
+        {
+            "url": "https://picdm.sunbangyan.cn/2023/10/12/10roy8s.jpg",
+            "dtl": ""
+        },
         {
             "url": "https://picdl.sunbangyan.cn/2023/10/12/10rnmw0.jpg",
             "dtl": ""
@@ -55,18 +71,6 @@
         },
         {
             "url": "https://picdl.sunbangyan.cn/2023/10/12/10rp0vt.jpg",
-            "dtl": ""
-        },
-        {
-            "url": "https://picss.sunbangyan.cn/2023/10/12/10rowfi.jpg",
-            "dtl": ""
-        },
-        {
-            "url": "https://picdl.sunbangyan.cn/2023/10/12/10rozls.jpg",
-            "dtl": ""
-        },
-        {
-            "url": "https://picdm.sunbangyan.cn/2023/10/12/10roy8s.jpg",
             "dtl": ""
         }
     ]

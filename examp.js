@@ -1,4 +1,10 @@
-let ph,playm=true,played=false;
+let pld=false;
+try{
+    playm;
+}catch(e){
+    pld=true;
+}
+let ph,played=false,playm=pld;
 function init() {
     ph=window.innerHeight;
     $(':root').css('--ph',`${ph}px`);

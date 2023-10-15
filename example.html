@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title">Title</title>
     <link rel="stylesheet" href="examp.css">
-    <base target="_blank">
+    <base target="_self">
 </head>
+
 <body>
-	<script src="jq.min.js"></script>
+    <div id="cover">
+        <p>加载中...</p>
+    </div>
+    <script src="jq.min.js"></script>
     <!-- <audio src="music.m4a" id="audio" preload="none"></audio> -->
-    <audio src="https://ghproxy.com/https://github.com/WaterDropLab/tczxydh/releases/download/Music/music.m4a" id="audio" preload="none"></audio>
+    <audio src="https://ghproxy.com/https://github.com/WaterDropLab/tczxydh/releases/download/Music/music.m4a"
+        id="audio" preload="none"></audio>
     <div id="tit">
-        <p class="title">安徽省天长中学运动会</p>
+        <div class="title">
+            <p id="topic">Loading...</p>
+            <a class="a btn" onclick="$('#sidebar').toggleClass('show');"><svg xmlns="http://www.w3.org/2000/svg"
+                    width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                </svg></a>
+        </div>
         <!-- <p>若某些图片加载失败，请右键图片点击加载映像以重新加载</p> -->
         <div id="musctrl">
-            <p>音乐: 运动员进行曲</p>
+            <p>🎵运动员进行曲</p>
             <a onclick="if($(this).hasClass('play')){
                     document.getElementById('audio').play();
                     played=true;
@@ -30,32 +43,86 @@
                 }" class="play a btn" style="margin: 0 15px;">播放</a>
         </div>
     </div>
+    <div id="sidebar">
+        <div class="grid">
+            <a class="card enable" href="example.html?id=opencrmn" style="grid-column: 2 span;">
+                <p>开幕式</p>
+            </a>
+            <a class="card enable" href="example.html?id=volunteer">
+                <p>志愿服务</p>
+            </a>
+            <a class="card" style="grid-column: 2 span;">
+                <p>闭幕式</p>
+            </a>
+            <a class="card">
+                <p>4×100m</p>
+            </a>
+            <a class="card">
+                <p>100m</p>
+            </a>
+            <a class="card">
+                <p>200m</p>
+            </a>
+            <a class="card">
+                <p>400m</p>
+            </a>
+            <a class="card">
+                <p>800m</p>
+            </a>
+            <a class="card">
+                <p>1500m</p>
+            </a>
+            <a class="card">
+                <p>3000m</p>
+            </a>
+            <a class="card">
+                <p>铅球</p>
+            </a>
+            <a class="card">
+                <p>跳高</p>
+            </a>
+            <a class="card" style="grid-column: 2 span;">
+                <p>跳远&三级跳远</p>
+            </a>
+            <a class="card">
+                <p>学校风景</p>
+            </a>
+            <a class="card">
+                <p>迎面接力</p>
+            </a>
+        </div>
+    </div>
     <a class="a" id="totop" onclick="$('html')[0].scroll(0,0)">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-bar-up" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M3.646 11.854a.5.5 0 0 0 .708 0L8 8.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zM2.4 5.2c0 .22.18.4.4.4h10.4a.4.4 0 0 0 0-.8H2.8a.4.4 0 0 0-.4.4z"/>
+            <path fill-rule="evenodd"
+                d="M3.646 11.854a.5.5 0 0 0 .708 0L8 8.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zM2.4 5.2c0 .22.18.4.4.4h10.4a.4.4 0 0 0 0-.8H2.8a.4.4 0 0 0-.4.4z" />
         </svg>
-    </a>=
-    <div id="cover">
-        <p>加载中...</p>
-    </div>
+    </a>
     <script>
         var r = window.location.search.substr(1).match(/(^|&)id=([^&]*)(&|$)/);
-        if (r != null) r=unescape(r[2])
-        else{
-            alert('一些小问题，不必介意，还请刷新试试');
+        if (r != null) r = unescape(r[2])
+        else {
+            alert('一点小问题，不必介意，还请刷新试试');
         }
-        $.getJSON(`pics/${r}.json`).then(res=>{
-            $('#title').text(res.title);
+        $.getJSON(`pics/${r}.json`).then(res => {
+            $('#topic').text(res.title);
+            $('#title').text('天中运动会-' + res.title);
+            if(res.intro){
+                $('#content')[0].innerHTML += `<div class="text">
+                    <p class="tit">${res.intro.tit}</p>
+                    <p>${res.intro.cnt}</p>
+                </div>`;
+            }
             res.pics.forEach(p => {
-                $('#content')[0].innerHTML+=`<div class="pic af">
+                $('#content')[0].innerHTML += `<div class="pic af">
                     <p>加载中...</p>
                     <img src="${p.url}" class="pic" loading="lazy">
                     <p class="desp">${p.dtl}</p>
-                </div>`; 
+                </div>`;
             });
             $('#cover,html').addClass('load');
             start();
-        }).fail(()=>{
+        }).fail(() => {
             alert('一些小问题，不必介意，还请刷新试试');
         });
     </script>
@@ -70,13 +137,15 @@
             $('#music>.tip').text('我们已开始播放音乐');
             $('#music>.btn.noplay').remove();
             $(this).remove();" class="play a btn">播放</a>
-            <a class="a btn noplay" onclick="playm=false;$('#musctrl').remove();$('#music>.btn').remove();$('#music>.tip').text('我们不会播放音乐')">不播放音乐</a>
+            <a class="a btn noplay"
+                onclick="playm=false;$('#musctrl').remove();$('#music>.btn').remove();$('#music>.tip').text('我们不会播放音乐')">不播放音乐</a>
         </div>
     </div>
     <div id="footer">
-        网站制作：<a class="a jump">星源</a><br>
-        策划方：<a class="a jump">水滴实验室</a>
+        网站制作：<a class="a jump" target="_blank" href="https://tjy-gitnub.github.io/">星源</a><br>
+        策划方：<a class="a jump" target="_blank">水滴实验室</a>
     </div>
     <script src="examp.js"></script>
 </body>
+
 </html>
