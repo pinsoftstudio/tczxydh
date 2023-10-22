@@ -1,4 +1,4 @@
-ans='{"title":"","pics":['
+ans='{"title":"","intro":{"tit":"","cnt":""},"pics":['
 while 1:
     a=input()
     if(a=='#'):break
