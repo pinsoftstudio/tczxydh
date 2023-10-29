@@ -117,7 +117,7 @@
             res.pics.forEach(p => {
                 $('#content')[0].innerHTML += `<div class="pic af">
                     <p>加载中...</p>
-                    <img src="${p.url}" class="pic" loading="lazy">
+                    <a href="${p.url}" class="link"><img src="${p.url}" class="pic" loading="lazy"></img></a>
                     <p class="desp">${p.dtl}</p>
                 </div>`;
             });
