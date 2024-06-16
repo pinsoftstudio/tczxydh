@@ -12,10 +12,38 @@
 - 主界面
 ![mainpage](Readme/mainpage.png)
 
-向下滑，你会看到
-![alt text](maintext.png)，这是由我们班以为语文高手写的。很好地展现的天中学子饱满的精神面貌，阐释了“Sportsmanship"的内涵。
+>向下滑，你会看到
+![alt text](Readme/maintext.png)
+这是由我们班以为语文高手写的。很好地展现的天中学子饱满的精神面貌，阐释了“Sportsmanship"的内涵。
 
-再向下滑...
-![alt text](mainchioce.png)
+> 再向下滑...
+
+![alt text](Readme/mainchioce.png)
 你可以选择一个项目来欣赏照片。
 
+
+- 我就选择开幕式来介绍
+
+> ![alt text](Readme/open-ceremony-music.png)
+你可以选择“默认播放”或“从不播放”，如果你什么也不选择而是向下翻页的话，会自动播放《运动员进行曲》
+
+> 开幕式介绍
+
+![alt text](Readme/introduction.png)
+
+> 哇！
+
+![alt text](Readme/1.png)
+
+![alt text](Readme/image-1.png)
+
+边听音乐边浏览相册，简直是一种享受！
+
+- 一个项目看完了，点击左上![alt text](Readme/menu.png)按钮，可以选择其它项目浏览哦！
+
+![alt text](Readme/finish.png)
+
+> 别忘了看一下我们的个人介绍
+![alt text](Readme\foot.png)
+
+# 该网站终身维护！
