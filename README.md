@@ -44,6 +44,6 @@
 ![alt text](Readme/finish.png)
 
 > 别忘了看一下我们的个人介绍
-![alt text](Readme\foot.png)
+![alt text](Readme/foot.png)
 
 # 该网站终身维护！
