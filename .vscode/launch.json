@@ -4,6 +4,20 @@
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+    {
+        "name": "Launch Edge",
+        "request": "launch",
+        "type": "msedge",
+        "url": "http://172.20.32.1:808/",
+        "webRoot": "${workspaceFolder}"
+    },
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "chrome",
+            "url": "http://172.20.32.1:808/",
+            "webRoot": "${workspaceFolder}"
+        },
         {
             "type": "msedge",
             "request": "launch",
