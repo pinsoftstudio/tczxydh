@@ -31,7 +31,7 @@
         </div>
         <!-- <p>若某些图片加载失败，请右键图片点击加载映像以重新加载</p> -->
         <div id="musctrl">
-            <p>🎵运动员进行曲</p>
+            <p id="topBarTitle">🎵运动员进行曲</p>
             <a onclick="if($(this).hasClass('play')){
                     if(playss){
                         document.getElementById('ssaudio').play();
@@ -122,6 +122,7 @@
             if(res.title=="学校风景"){
                 //如果打开的是学校风景
                 playss=true;  
+                $('#topBarTitle').text("一路阳光（校歌）")
             }
             $('#topic').text(res.title);
             $('#title').text('天中运动会-' + res.title);    //更改标题
